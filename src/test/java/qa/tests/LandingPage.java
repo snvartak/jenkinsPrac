@@ -1,5 +1,6 @@
-package qa.pages;
+package qa.tests;
 
+import org.testng.annotations.Test;
 import java.io.IOException;
 
 import org.testng.annotations.Test;
