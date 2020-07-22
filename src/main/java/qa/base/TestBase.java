@@ -1,0 +1,33 @@
+package qa.base;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+
+public class TestBase {
+
+	public static WebDriver driver;
+	public static Properties prop; 
+	
+	public static void loadConfig() throws IOException
+	{
+		prop = new Properties();
+		FileInputStream fis = new FileInputStream("/JenMaven/src/main/java/config/config.properties");
+		prop.load(fis);
+	}
+	
+	public static void initializeDriver() throws IOException
+	{
+		loadConfig();
+		String browser = prop.getProperty("browser");
+		if(browser.equalsIgnoreCase("firefox"))
+		{
+			System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
+		}
+		driver.get(prop.getProperty("url"));
+	}
+	
+}
