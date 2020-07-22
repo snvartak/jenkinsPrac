@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-07-22T16:56:12Z" name="Suite" finished-at="2020-07-22T16:56:54Z" duration-ms="42357">
+    <groups>
+    </groups>
+    <test started-at="2020-07-22T16:56:12Z" name="Test" finished-at="2020-07-22T16:56:54Z" duration-ms="42357">
+      <class name="qa.tests.LandingPage">
+        <test-method signature="testTitle()[pri:0, instance:qa.tests.LandingPage@39d76cb5]" started-at="2020-07-22T22:26:12Z" name="testTitle" finished-at="2020-07-22T22:26:54Z" duration-ms="42341" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTitle -->
+      </class> <!-- qa.tests.LandingPage -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
