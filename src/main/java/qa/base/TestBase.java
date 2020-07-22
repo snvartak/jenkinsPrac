@@ -16,7 +16,7 @@ public class TestBase {
 	public static void loadConfig() throws IOException
 	{
 		prop = new Properties();
-		FileInputStream fis = new FileInputStream("/JenPrac/ws/src/main/java/config/config.properties");
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"/JenMaven/src/main/java/config/config.properties");
 		prop.load(fis);
 	}
 	
