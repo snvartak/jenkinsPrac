@@ -7,6 +7,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class TestBase {
 
@@ -20,19 +21,20 @@ public class TestBase {
 		prop.load(fis);
 	}
 	
-	public static WebDriver initializeDriver() throws IOException
+	public static void initializeDriver() throws IOException
 	{
 		loadConfig();
 		String browser = prop.getProperty("browser");
 		if(browser.equalsIgnoreCase("firefox"))
 		{
 			System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
+			driver = new FirefoxDriver();
 		}
 		driver.get(prop.getProperty("url"));
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
-		return driver;
+		//return driver;
 	}
 	
 }

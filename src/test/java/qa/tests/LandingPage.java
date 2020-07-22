@@ -10,11 +10,11 @@ import qa.base.TestBase;
 
 public class LandingPage extends TestBase{
 
-	WebDriver driver ;
+	//WebDriver driver ;
 	@Test
 	public void testTitle() throws IOException
 	{
-		driver = initializeDriver();
+		initializeDriver();
 		System.out.println(driver.getTitle());	
 	}
 }
