@@ -1,5 +1,6 @@
 package qa.tests;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import java.io.IOException;
 
@@ -9,10 +10,11 @@ import qa.base.TestBase;
 
 public class LandingPage extends TestBase{
 
+	WebDriver driver ;
 	@Test
 	public void testTitle() throws IOException
 	{
-		initializeDriver();
+		driver = initializeDriver();
 		System.out.println(driver.getTitle());	
 	}
 }

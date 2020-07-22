@@ -20,7 +20,7 @@ public class TestBase {
 		prop.load(fis);
 	}
 	
-	public static void initializeDriver() throws IOException
+	public static WebDriver initializeDriver() throws IOException
 	{
 		loadConfig();
 		String browser = prop.getProperty("browser");
@@ -32,6 +32,7 @@ public class TestBase {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+		return driver;
 	}
 	
 }
