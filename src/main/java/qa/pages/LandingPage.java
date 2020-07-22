@@ -12,6 +12,6 @@ public class LandingPage extends TestBase{
 	public void testTitle() throws IOException
 	{
 		initializeDriver();
-		System.out.println(driver.getTitle());
+		System.out.println(driver.getTitle());	
 	}
 }
