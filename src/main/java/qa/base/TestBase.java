@@ -1,4 +1,4 @@
-package qa.base;
+  package qa.base;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
+                 
 public class TestBase {
 
 	public static WebDriver driver;

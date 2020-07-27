@@ -2,12 +2,12 @@
 <testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-07-22T16:56:12Z" name="Suite" finished-at="2020-07-22T16:56:54Z" duration-ms="42357">
+  <suite started-at="2020-07-27T10:18:03Z" name="Suite" finished-at="2020-07-27T10:18:16Z" duration-ms="13630">
     <groups>
     </groups>
-    <test started-at="2020-07-22T16:56:12Z" name="Test" finished-at="2020-07-22T16:56:54Z" duration-ms="42357">
+    <test started-at="2020-07-27T10:18:03Z" name="Test" finished-at="2020-07-27T10:18:16Z" duration-ms="13630">
       <class name="qa.tests.LandingPage">
-        <test-method signature="testTitle()[pri:0, instance:qa.tests.LandingPage@39d76cb5]" started-at="2020-07-22T22:26:12Z" name="testTitle" finished-at="2020-07-22T22:26:54Z" duration-ms="42341" status="PASS">
+        <test-method signature="testTitle()[pri:0, instance:qa.tests.LandingPage@651aed93]" started-at="2020-07-27T15:48:03Z" name="testTitle" finished-at="2020-07-27T15:48:16Z" duration-ms="13613" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTitle -->
