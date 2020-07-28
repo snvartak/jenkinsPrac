@@ -5,7 +5,8 @@
     <classes>
       <class name="qa.tests.LandingPageTest">
         <methods>
-          <include name="getIndiaSuggestion"/>
+          <include name="setUp"/>
+          <include name="testTitle"/>
         </methods>
       </class> <!-- qa.tests.LandingPageTest -->
     </classes>

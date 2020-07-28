@@ -3,11 +3,12 @@
 <suite parallel="none" name="Failed suite [Suite]">
   <test parallel="none" name="Test(failed)">
     <classes>
-      <class name="qa.tests.LandingPage">
+      <class name="qa.tests.LandingPageTest">
         <methods>
-          <include name="testTitle"/>
+          <include name="getIndiaSuggestion"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- qa.tests.LandingPage -->
+      </class> <!-- qa.tests.LandingPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

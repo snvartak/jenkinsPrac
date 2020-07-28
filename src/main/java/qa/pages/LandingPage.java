@@ -16,13 +16,18 @@ public class LandingPage extends TestBase{
 	By suggestion = By.xpath("//div[@id='select-class-example']/fieldset/input");
 	
 	
-	public void initializeElemetns(WebDriver driver)
+	public String titleGetter()
+	{
+		return driver.getTitle();
+	}
+	
+	public void initializeElemetns()
 	{
 		PageFactory.initElements(driver, this);;
 	}
+	
 	public WebElement getSugesstionBox()
 	{
-		//return suggestion;
 		return driver.findElement(suggestion);
 	}
 	
@@ -42,6 +47,6 @@ public class LandingPage extends TestBase{
 	public void verifyIfSuggestionsReturned(WebElement suggest)
 	{
 		Actions act = new Actions(driver);
-		act.sendKeys(suggest, Keys.ENTER);
+		act.sendKeys(suggest, Keys.ARROW_DOWN).sendKeys(suggest, Keys.ENTER).build().perform();
 	}
 }

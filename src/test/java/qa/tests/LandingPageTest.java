@@ -1,7 +1,13 @@
 package qa.tests;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import java.io.IOException;
 
@@ -13,21 +19,36 @@ import qa.pages.LandingPage;
 public class LandingPageTest extends TestBase{
 
 	LandingPage l = new LandingPage();
-	@Test
-	public void testTitle() throws IOException
+	
+	
+	@BeforeClass
+	public void setUp() throws IOException
 	{
-		initializeDriver();
-		System.out.println("Title : " + driver.getTitle());	
+		initializeDriver();	
 	}
 	
-	@Test
+	@Test(priority=1)
+	public void testTitle() throws IOException
+	{
+		String title = l.titleGetter();
+		if(title.equalsIgnoreCase("Practice Page"))
+		{
+			System.out.println("Title : " + title + " is correct!!");
+			AssertJUnit.assertTrue(true);
+		}
+		else
+		{
+			System.out.println("Title : " + title + " is not correct!!");
+			AssertJUnit.assertTrue(false);	
+		}
+	}
+	
+	@Test(priority=2)
 	public void getIndiaSuggestion()
 	{
-		//l.initializeElemetns(driver);
 		WebElement s = l.getSugesstionBox();
 		l.enterValueInSuggestion("Ind", s);
 		l.verifyIfSuggestionsReturned(s);
-
 	}
 	
 }
