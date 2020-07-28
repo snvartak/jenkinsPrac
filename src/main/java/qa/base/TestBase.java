@@ -8,12 +8,15 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.BeforeSuite;
+
+import util.ExtentReportListener;
                  
 public class TestBase {
 
 	public static WebDriver driver;
 	public static Properties prop; 
-	
+		
 	public static void loadConfig() throws IOException
 	{
 		prop = new Properties();
@@ -21,6 +24,11 @@ public class TestBase {
 		prop.load(fis);
 	}
 	
+	@BeforeSuite
+	public void bs()
+	{
+		ExtentReportListener.startTest();
+	}
 	public static void initializeDriver() throws IOException
 	{
 		loadConfig();

@@ -1,6 +1,9 @@
 package qa.tests;
 
 import org.testng.annotations.Test;
+
+import com.relevantcodes.extentreports.LogStatus;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.AssertJUnit;
 import org.openqa.selenium.WebDriver;
@@ -15,11 +18,12 @@ import org.testng.annotations.Test;
 
 import qa.base.TestBase;
 import qa.pages.LandingPage;
+import util.ExtentReportListener;
 
 public class LandingPageTest extends TestBase{
 
 	LandingPage l = new LandingPage();
-	
+	ExtentReportListener e = new ExtentReportListener();
 	
 	@BeforeClass
 	public void setUp() throws IOException
@@ -33,13 +37,14 @@ public class LandingPageTest extends TestBase{
 		String title = l.titleGetter();
 		if(title.equalsIgnoreCase("Practice Page"))
 		{
-			System.out.println("Title : " + title + " is correct!!");
+			e.test.log(LogStatus.PASS, "Title is correct!!" );
 			AssertJUnit.assertTrue(true);
 		}
 		else
 		{
-			System.out.println("Title : " + title + " is not correct!!");
-			AssertJUnit.assertTrue(false);	
+			//System.out.println("Title : " + title + " is not correct!!");
+			e.test.log(LogStatus.FAIL, "Title is not correct");
+			AssertJUnit.assertTrue(false);
 		}
 	}
 	
@@ -49,6 +54,8 @@ public class LandingPageTest extends TestBase{
 		WebElement s = l.getSugesstionBox();
 		l.enterValueInSuggestion("Ind", s);
 		l.verifyIfSuggestionsReturned(s);
+		e.test.addScreenCapture(System.getProperty("user.dir") + "\\Screenshot");
+	
 	}
 	
 }
